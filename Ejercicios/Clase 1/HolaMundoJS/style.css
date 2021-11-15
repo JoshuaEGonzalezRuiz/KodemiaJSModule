@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap'); /*Se añade una fuente externa*/
+
+*{ /*Se agregan valores globales*/
+    background-color: #000;
+    font-family: 'Comic Neue';
+}
+
+#divHelloWorld { /*Se centra el contenedor principal de forma horizontal y vertical*/
+    position : absolute;
+    left     : 50%;
+    top      : 50%;
+    transform: translate(-50%, -50%);
+    padding  : 10px;
+}
+
+#hellowWorld { /*Se agrega el color y tamaño deseado de la fuente y después se centra el texto*/
+    color: #00fd37;
+    font-size: 250px;
+    text-align: center;
+}
