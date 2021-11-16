@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: #323232;
+}
+
+#divDescription {
+    border: 2px solid #000000;
+    background-color: #3F3351;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2% 8% 2% 8%;
+    min-width: 328px;
+}
+
+h1 {
+    color: #4ECCA3;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    color: #FFA069;
+}
+
+p {
+    color: #EAB9C9;
+    text-align: justify;
+    font-style: italic;
+    font-size: 18px;
+}
+
+#consoleMethods, th, td {
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 10px;
+    border-spacing: 10px;
+}
+
+#consoleMethods {
+    background-color: #3F3351;
+    margin: 2% 8% 2% 8%;
+    width: 84%;
+}
+
+#consoleMethods th {
+    background-color: #F6D7A7;
+    color: #2B2B2B;
+}
+
+.methodCell {
+    background-color: #9C3D54;
+    text-align: center;
+}
+
+.methodCell a {
+    color: #F1D4D4;
+}
+
+.descriptionCell {
+    background-color: #3E2C41;
+    color: #B4A5A5;
+}
