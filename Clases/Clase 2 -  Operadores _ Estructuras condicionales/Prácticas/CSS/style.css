@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: #000000;
+}
+
+h1 {
+    color      : #916BBF;
+    text-align : center;
+    font-weight: bold;
+}
+
+#divDescription {
+    border          : 2px solid #000000;
+    background-color: #1C0C5B;
+    border-radius   : 15px;
+    padding         : 20px;
+    margin          : 2% 8% 2% 8%;
+    min-width       : 526px;
+}
+
+p {
+    font-weight: bold;
+    text-align : justify;
+}
+
+form.form {
+    display: table;
+}
+
+div.form {
+    display: table-row;
+}
+
+label,
+input {
+    display      : table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+button {
+    background-color: #916BBF;
+    border-radius   : 20px;
+}
+
+input {
+    border-radius: 20px;
+    font-size    : 25px;
+}
+
+select {
+    border-radius: 20px;
+    padding      : 8px;
+}
+
+#exercises,
+th,
+td {
+    border        : 2px solid #000000;
+    border-radius : 15px;
+    padding       : 10px;
+    border-spacing: 10px;
+}
+
+#exercises {
+    background-color: #1C0C5B;
+    margin          : 2% 8% 2% 8%;
+    width           : 84%;
+}
+
+#exercises th {
+    background-color: #916BBF;
+    font-size       : 18px;
+    color           : #2B2B2B;
+}
+
+.descCell {
+    background-color: #C996CC;
+    text-align      : center;
+}
+
+.sampleCell {
+    background-color: #BDBDD7;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica operadores y condicionales</title>
+
+  <link href="./CSS/style.css" rel="stylesheet" type="text/css" />
+  <script src="./JS/functions.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <div id="divDescription">
+    <h1>Ejercicios de práctica: Operadores y condicionales</h1>
+  </div>
+
+  <table id="exercises">
+    <thead>
+      <tr>
+        <th>Ejercicio</th>
+        <th>Muestra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="descCell">
+          <p>1. Solicitar dos números y compararlos y el que sea mayor verificar si es par o impar y mostrarlo en
+            pantalla</p>
+        </td>
+        <td class="sampleCell">
+          <form action="" method="get" class="form">
+            <div class="form">
+              <label for="numberOne">Ingresa el primer número: </label>
+              <input type="text" name="numberOne" id="numberOne" required>
+            </div>
+            <div class="form">
+              <label for="numberTwo">Ingresa el segundo número: </label>
+              <input type="text" name="numberTwo" id="numberTwo" required>
+            </div>
+            <div class="form">
+              <button type="submit" onclick="exerciseOne(numberOne, numberTwo)">Verificar</button>
+            </div>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td class="descCell">
+          <p>2. Listar las figuras paralelogramo, triángulo y rectángulo, solicitar las medidas de la figura
+            seleccionada, hallar el área de la misma y mostrarlo en pantalla</p>
+        </td>
+        <td id="exerciseTwo" class="sampleCell">
+          <div class="form">
+            <label for="figuresList">Selecciona una figura:</label>
+            <select id="figuresList" name="figuresList">
+              <option value="0">Paralelogramo</option>
+              <option value="1">Triángulo</option>
+              <option value="2">Rectángulo</option>
+            </select>
+          </div>
+          <div class="form">
+            <button onclick="exerciseTwo(figuresList)">Verificar</button>
+          </div>
+          <!-- <form action="" method="get" class="form">
+              <div class="form">
+                <label for="firstSide">Ingresa el segundo número: </label>
+                <input type="text" name="firstSide" id="firstSide" required>
+              </div>
+              <div class="form">
+                <label for="secondSide">Ingresa el segundo número: </label>
+                <input type="text" name="secondSide" id="secondSide" required>
+              </div>
+              <div class="form">
+                <label for="thirdSide">Ingresa el segundo número: </label>
+                <input type="text" name="thirdSide" id="thirdSide" required>
+              </div>
+              <div class="form">
+                <input type="submit" value="Verificar">
+              </div>
+            </form> -->
+        </td>
+      </tr>
+      <tr>
+        <td class="descCell">
+          <p>3. Solicitar el peso en kilogramos y la estatura del usuario, calcular su IMC y mostrarle en pantalla los
+            resultados</p>
+        </td>
+        <td class="sampleCell">
+          <form action="" method="get" class="form">
+            <div class="form">
+              <label for="weight">Ingresa tu peso en kg: </label>
+              <input type="text" name="weight" id="weight" required>
+            </div>
+            <div class="form">
+              <label for="height">Ingresa tu estatura en mts: </label>
+              <input type="text" name="height" id="height" required>
+            </div>
+            <div class="form">
+              <button type="submit" onclick="exerciseThree(weight, height)">Verificar</button>
+            </div>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
