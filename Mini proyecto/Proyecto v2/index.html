@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrador de solución</title>
+</head>
+
+<body>
+    <script>
+        let datos = [
+            [
+                "Joshua",
+                24,
+                "Conocido",
+                "ACVEVESCSD",
+                "1A",
+                [
+                    "Español:9",
+                    "Matemáticas:10",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "César",
+                22,
+                "Conocido",
+                "AVDBERBERB",
+                "2A",
+                [
+                    "Español:7",
+                    "Matemáticas:6",
+                    "Geografía:5"
+                ]
+            ],
+            [
+                "Eduardo",
+                20,
+                "Conocido",
+                "ACASVREVAC",
+                "1A",
+                [
+                    "Español:6",
+                    "Matemáticas:8",
+                    "Geografía:7"
+                ]
+            ],
+            [
+                "Agustina",
+                21,
+                "Conocido",
+                "BBCJEBJE",
+                "3A",
+                [
+                    "Español:8",
+                    "Matemáticas:7",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "Fernanda",
+                22,
+                "Conocido",
+                "SACJKNASKC",
+                "2A",
+                [
+                    "Español:7",
+                    "Matemáticas:6",
+                    "Geografía:7"
+                ]
+            ],
+            [
+                "Matilde",
+                21,
+                "Conocido",
+                "JNCJNENCK",
+                "3A",
+                [
+                    "Español:9",
+                    "Matemáticas:7",
+                    "Geografía:6"
+                ]
+            ],
+            [
+                "Alberto",
+                24,
+                "Conocido",
+                "ACVEVESCSD",
+                "1B",
+                [
+                    "Español:9",
+                    "Matemáticas:9",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "Roberto",
+                22,
+                "Conocido",
+                "AVDBERBERB",
+                "2B",
+                [
+                    "Español:8",
+                    "Matemáticas:7",
+                    "Geografía:8"
+                ]
+            ],
+            [
+                "Esperanzo",
+                20,
+                "Conocido",
+                "ACASVREVAC",
+                "1B",
+                [
+                    "Español:6",
+                    "Matemáticas:8",
+                    "Geografía:5"
+                ]
+            ],
+            [
+                "Agustino",
+                21,
+                "Conocido",
+                "BBCJEBJE",
+                "3B",
+                [
+                    "Español:8",
+                    "Matemáticas:7",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "Fernando",
+                22,
+                "Conocido",
+                "SACJKNASKC",
+                "2B",
+                [
+                    "Español:9",
+                    "Matemáticas:6",
+                    "Geografía:6"
+                ]
+            ],
+            [
+                "Matildo",
+                21,
+                "Conocido",
+                "JNCJNENCK",
+                "3B",
+                [
+                    "Español:7",
+                    "Matemáticas:6",
+                    "Geografía:5"
+                ]
+            ],
+            [
+                "Jorge",
+                24,
+                "Conocido",
+                "ACVEVESCSD",
+                "1C",
+                [
+                    "Español:9",
+                    "Matemáticas:9",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "Cerafino",
+                22,
+                "Conocido",
+                "AVDBERBERB",
+                "2C",
+                [
+                    "Español:5",
+                    "Matemáticas:5",
+                    "Geografía:5"
+                ]
+            ],
+            [
+                "Hermenegildo",
+                20,
+                "Conocido",
+                "ACASVREVAC",
+                "1C",
+                [
+                    "Español:6",
+                    "Matemáticas:6",
+                    "Geografía:6"
+                ]
+            ],
+            [
+                "Ana",
+                21,
+                "Conocido",
+                "BBCJEBJE",
+                "3C",
+                [
+                    "Español:8",
+                    "Matemáticas:7",
+                    "Geografía:9"
+                ]
+            ],
+            [
+                "Faustina",
+                22,
+                "Conocido",
+                "SACJKNASKC",
+                "2C",
+                [
+                    "Español:6",
+                    "Matemáticas:6",
+                    "Geografía:6"
+                ]
+            ],
+            [
+                "Morrigan",
+                21,
+                "Conocido",
+                "JNCJNENCK",
+                "3C",
+                [
+                    "Español:6",
+                    "Matemáticas:6",
+                    "Geografía:6"
+                ]
+            ]
+        ];
+
+        console.log(datos);
+
+        function ordAsc() { //Alfabet asc
+            datos.sort();
+        }
+
+        function ordDesc() { //Alfabet desc
+            datos.sort();
+
+            datos.reverse();
+        }
+
+        //console.log(datos.sort((a,b) => a[4] > b[4] ? 1 : -1)); //Grupos asc
+        //console.log(datos.sort((a,b) => a[4] > b[4] ? -1 : 1)); //Grupos desc
+
+
+        //console.log(datos.sort((a,b) => a[1] > b[1] ? 1 : -1)); //Edades asc
+        //console.log(datos.sort((a,b) => a[1] > b[1] ? -1 : 1)); //Edades desc
+
+        function getProms(datos) {
+            let nuevo = datos;
+
+            for (let i = 0; i < nuevo.length; i++) {
+                const calificaciones = nuevo[i][5];
+                let prom = 0;
+
+                for (let j = 0; j <= calificaciones.length; j++) {
+                    const calificacion = calificaciones[j];
+
+                    if (j == calificaciones.length) {
+                        nuevo[i].push("Promedio general:" + (prom / calificaciones.length).toFixed(2));
+                    } else {
+                        prom += parseInt(calificacion.split(":")[1]);
+                    }
+
+
+                }
+            }
+
+            return nuevo;
+        }
+
+        //getProms(datos).sort((a,b) => a[6] > b[6] ? 1 : -1); //Proms asc
+
+        //getProms(datos).sort((a,b) => a[6] > b[6] ? -1 : 1); //Proms desc
+
+        function promediosGruposXAnio(arreglo, anio) {
+            let datos = getProms(arreglo);
+
+            let promA = 0;
+            let promB = 0;
+            let promC = 0;
+
+            let countA = 0;
+            let countB = 0;
+            let countC = 0;
+
+            let results = [];
+
+            for (let i = 0; i < datos.length; i++) {
+                const element = datos[i];
+
+                if (element[4].includes(`${anio}A`)) {
+                    promA += parseFloat(element[6].split(":")[1]);
+                    countA += 1;
+                } else if (element[4].includes(`${anio}B`)) {
+                    promB += parseFloat(element[6].split(":")[1]);
+                    countB += 1;
+                } else if (element[4].includes(`${anio}C`)) {
+                    promC += parseFloat(element[6].split(":")[1]);
+                    countC += 1;
+                }
+            }
+
+            promA /= countA;
+            promB /= countB;
+            promC /= countC;
+
+            results.push(
+                promA.toFixed(2),
+                promB.toFixed(2),
+                promC.toFixed(2)
+            );
+
+            return [results, results.every(resultado => resultado > 7)]
+        }
+
+        //console.log(promediosGruposXAnio(datos, 1));
+
+        function check(arreglo, anio, grupo, alumno) {
+            let result;
+
+            if (alumno) {
+                arreglo.forEach(element => {
+                    if (element[0] === alumno) {
+                        let estaAprobado = element[6].split(":")[1] > 7;
+                        result = [element[6], estaAprobado];
+                    }
+                });
+            }
+
+            if (anio) {
+                if (grupo) {
+                    let prom = 0;
+                    let count = 0;
+                    arreglo.forEach(element => {
+                        if (element[4] === anio + grupo) {
+                            count += 1;
+                            prom += parseFloat(element[6].split(":")[1]);
+                        }
+                    });
+
+                    prom /= count;
+
+                    let estaAprobado = prom > 7;
+
+                    result = [prom, estaAprobado];
+                }
+            }
+
+            return result;
+        }
+
+        //console.log(check(getProms(datos), 0, 0, "Joshua")); //Verifica si un alumno aprobó o no
+        //console.log(check(getProms(datos), '1', 'A', "")); //Verifica si un grupo de algún año aprobó o no
+
+
+        /*function checkFour(arreglo) {
+            let results = [];
+            arreglo.forEach(alumno => {
+
+                switch (alumno[4]) {
+                    case '1A':
+                        
+                        break;
+                    case '2A':
+
+                        break;
+                    case '3A':
+
+                        break;
+                    case '1B':
+
+                        break;
+                    case '2B':
+
+                        break;
+                    case '3B':
+
+                        break;
+                    case '1C':
+
+                        break;
+                    case '2C':
+
+                        break;
+                    case '3C':
+
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }*/
+
+    </script>
+</body>
+
+</html>
