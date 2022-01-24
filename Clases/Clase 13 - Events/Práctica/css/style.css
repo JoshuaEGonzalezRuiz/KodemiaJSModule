@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+
+body {
+  background-color: #000000;
+  font-family: "Nunito", sans-serif;
+}
+
+.divGeneral {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.divTitle {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.divTitle > h1 {
+  color: #6e85b2;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.titlePage {
+  color: #fff;
+}
+
+.divImage {
+  background-color: #fff;
+  justify-content: center;
+  margin: 25px;
+  text-align: center;
+  box-shadow: 2px 4px 8px 2px #6e85b2; /* this adds the "card" effect */
+  border-radius: 10%;
+}
+
+.divImage > p {
+  color: #6e85b2;
+}
+
+.description {
+  display: none;
+}
+
+.smarthphone {
+  border-radius: 50%;
+}
