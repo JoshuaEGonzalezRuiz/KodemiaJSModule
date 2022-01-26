@@ -1,52 +1,183 @@
-let elementsHTML = [];
-
 /* DECLARACIÓN DE LOS DIVS*/
+let page = 1;
+
+let divOptions = document.createElement("div");
 
 let divMovies = document.createElement("div");
+
+let divPages = document.createElement("div");
 
 /* DECLARACIÓN DE LOS DIVS*/
 
 /* SE AGREGAN LOS ELEMENTOS AL DIV PRINCIPAL*/
 
-let select = document.createElement("select");
-let optionOne = document.createElement("option");
-optionOne.textContent = "Popularidad (Descendente)";
-optionOne.value = "popularity.desc";
-select.appendChild(optionOne);
+let options = [
+  {
+    name: "Popularidad (desc)",
+    value: "popularity.desc",
+  },
+  {
+    name: "Popularidad (asc)",
+    value: "popularity.asc",
+  },
+  {
+    name: "Fecha de salida (asc)",
+    value: "release_date.asc",
+  },
+  {
+    name: "Fecha de salida (desc)",
+    value: "release_date.desc",
+  },
+  {
+    name: "Ingreso (asc)",
+    value: "revenue.asc",
+  },
+  {
+    name: "Ingreso (desc)",
+    value: "revenue.desc",
+  },
+  {
+    name: "Fecha de lanzamiento principal (asc)",
+    value: "primary_release_date.asc",
+  },
+  {
+    name: "Fecha de lanzamiento principal (desc)",
+    value: "primary_release_date.desc",
+  },
+  {
+    name: "Título original (asc)",
+    value: "original_title.asc",
+  },
+  {
+    name: "Título original (desc)",
+    value: "original_title.desc",
+  },
+  {
+    name: "Voto promedio (asc)",
+    value: "vote_average.asc",
+  },
+  {
+    name: "Voto promedio (desc)",
+    value: "vote_average.desc",
+  },
+  {
+    name: "Cantidad de votos (asc)",
+    value: "vote_count.asc",
+  },
+  {
+    name: "Cantidad de votos (desc)",
+    value: "vote_count.desc",
+  },
+];
 
-let optionTwo = document.createElement("option");
-optionTwo.textContent = "Promedio de votos (Descendente)";
-optionTwo.value = "vote_average.desc";
-select.appendChild(optionTwo);
+let labelSortSelect = document.createElement("p");
+labelSortSelect.innerText = "Ordenar por: ";
+labelSortSelectStyle(labelSortSelect);
 
-select.onchange = () => {
-  makeImages(divMovies);
+let sortSelect = document.createElement("select");
+sortSelectStyle(sortSelect);
+
+let labelYearSelect = document.createElement("p");
+labelYearSelect.innerText = "Año: ";
+labelYearSelectStyle(labelYearSelect);
+
+let yearSelect = document.createElement("select");
+yearSelectStyle(yearSelect);
+
+options.forEach((option) => {
+  let opt = document.createElement("option");
+  opt.textContent = option.name;
+  opt.value = option.value;
+  sortSelect.appendChild(opt);
+});
+
+for (let index = new Date().getFullYear(); index >= 1900; --index) {
+  let opt = document.createElement("option");
+  opt.textContent = index;
+  opt.value = index;
+  yearSelect.appendChild(opt);
+}
+
+divOptions.appendChild(labelSortSelect);
+divOptions.appendChild(sortSelect);
+divOptions.appendChild(labelYearSelect);
+divOptions.appendChild(yearSelect);
+
+for (let index = 1; index < 200; index++) {
+  let buttonOtherPage = document.createElement("button");
+  buttonOtherPage.innerText = index;
+  buttonOtherPage.style.marginTop = "80px";
+  buttonOtherPage.style.marginLeft = "5px";
+  buttonOtherPage.style.marginRight = "5px";
+  buttonOtherPage.style.backgroundColor = "#79B4B7";
+  buttonOtherPage.style.border = "none";
+  buttonOtherPage.style.borderRadius = "20px";
+  buttonOtherPage.style.color = "#FEFBF3";
+
+  console.log(buttonOtherPage.style.backgroundColor);
+  buttonOtherPage.onclick = () => {
+    page = parseInt(buttonOtherPage.innerText);
+    deleteAllinDiv();
+    makeImages(
+      divMovies,
+      sortSelect.options[sortSelect.selectedIndex].value,
+      yearSelect.options[yearSelect.selectedIndex].value,
+      page
+    );
+  };
+
+  divPages.appendChild(buttonOtherPage);
+}
+
+sortSelect.onchange = () => {
+  deleteAllinDiv();
+  makeImages(
+    divMovies,
+    sortSelect.options[sortSelect.selectedIndex].value,
+    yearSelect.options[yearSelect.selectedIndex].value,
+    page
+  );
 };
 
-makeImages(divMovies);
+yearSelect.onchange = () => {
+  deleteAllinDiv();
+  makeImages(
+    divMovies,
+    sortSelect.options[sortSelect.selectedIndex].value,
+    yearSelect.options[yearSelect.selectedIndex].value,
+    page
+  );
+};
+
+makeImages(
+  divMovies,
+  sortSelect.options[sortSelect.selectedIndex].value,
+  yearSelect.options[yearSelect.selectedIndex].value,
+  page
+);
 
 /* SE AGREGAN LOS ELEMENTOS AL DIV PRINCIPAL*/
 
 /* SE AGREGA EL DIV PRINCIPAL AL BODY*/
-
+document.body.appendChild(divOptions);
 document.body.appendChild(divMovies);
-document.body.appendChild(select);
+document.body.appendChild(divPages);
 document.body.style.backgroundColor = "#FEFBF3";
 document.body.style.fontFamily = "'Nunito'";
 
 /* SE AGREGA EL DIV PRINCIPAL AL BODY*/
 
 /* DECLARACIÓN DE LOS ESTILOS*/
-
+divOptionsStyle(divOptions);
 divMoviesStyle(divMovies);
-
+divPagesStyle(divPages);
 /* DECLARACIÓN DE LOS ESTILOS*/
 
 /* DECLARACIÓN DE LAS FUNCIONES*/
 
 function getMovies(sort_by, year, page) {
   return new Promise(function (resolve, reject) {
-    let xhr = new XMLHttpRequest();
+    /*let xhr = new XMLHttpRequest();
 
     xhr.open(
       "GET",
@@ -57,7 +188,7 @@ function getMovies(sort_by, year, page) {
 
     xhr.onload = function () {
       if (this.readyState === 4 && this.status == 200) {
-        console.log(this.responseText);
+        //console.log(this.responseText);
         resolve(JSON.parse(this.responseText));
       } else {
         reject({
@@ -74,15 +205,15 @@ function getMovies(sort_by, year, page) {
       });
     };
 
-    xhr.send();
+    xhr.send();*/
 
-    /*let requestOptions = {
+    let requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=${api_key}`,
+      `https://api.themoviedb.org/3/discover/movie?sort_by=${sort_by}&api_key=${api_key}&language=es-MX&page=${page}&year=${year}`,
       requestOptions
     )
       .then((response) => resolve(response.json()))
@@ -91,32 +222,20 @@ function getMovies(sort_by, year, page) {
           status: error.status,
           statusText: error.statusText,
         })
-      );*/
+      );
   });
 }
-async function makeImages(div) {
-  let movies = await getMovies(
-    select.options[select.selectedIndex].value,
-    2015,
-    1
-  );
+
+async function makeImages(div, sort, year, page) {
+  let movies = await getMovies(sort, year, page);
 
   movies.results.forEach((movie) => {
-    console.log(movie);
-
     let cardMovie = document.createElement("div");
 
     let movieImage = document.createElement("img");
-    movieImage.src = `${url_images}${movie.poster_path}`;
-    movieImage.height = 300;
-    movieImage.style.borderRadius = "20px";
-    movie.overview
-      ? (movieImage.onclick = () => {
-          movieImage.style.display = "none";
-          movieTitle.style.display = "none";
-          movieDescription.style.display = "inline";
-        })
-      : null;
+    movieImage.src = movie.poster_path
+      ? `${url_images}${movie.poster_path}`
+      : `https://upload.wikimedia.org/wikipedia/commons/9/95/No_not.png`;
 
     let movieTitle = document.createElement("p");
     movieTitle.innerText = movie.original_title;
@@ -127,14 +246,9 @@ async function makeImages(div) {
 
     let movieDescription = document.createElement("p");
     movieDescription.innerText = movie.overview;
-    movieDescription.style.display = "none";
-    movie.overview
-      ? (movieDescription.onclick = () => {
-          movieImage.style.display = "inline";
-          movieTitle.style.display = "inline";
-          movieDescription.style.display = "none";
-        })
-      : null;
+
+    movieDescriptionStyle(movieDescription, movie, movieImage, movieTitle);
+    movieImageStyle(movieImage, movie, movieTitle, movieDescription);
 
     divMovieDescription.appendChild(movieDescription);
 
@@ -148,4 +262,9 @@ async function makeImages(div) {
   });
 }
 
+function deleteAllinDiv() {
+  while (divMovies.hasChildNodes()) {
+    divMovies.removeChild(divMovies.lastChild);
+  }
+}
 /* DECLARACIÓN DE LAS FUNCIONES*/
