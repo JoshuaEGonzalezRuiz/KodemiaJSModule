@@ -1,0 +1,68 @@
+body {
+    font-family: 'Nunito';
+}
+
+#divWeather {
+    align-items   : center;
+    display       : flex;
+    margin        : 25px;
+    flex-direction: column;
+}
+
+#divTitle {
+    justify-content: center;
+    display        : flex;
+    margin         : 10px;
+}
+
+#cardWeather {
+    margin : 25px;
+    padding : 25px;
+    border : 1px solid;
+    border-radius : 25px;
+    background-color : #F6F6F6;
+}
+
+#imgWeather {
+    height: 325px;
+    border-radius: 20px;
+}
+
+#cardDescription {
+    display : flex;
+    justify-content : center;
+    margin : 5px;
+    margin-top : 15px;
+}
+
+.labels {
+    font-size : 18px;
+}
+
+#cardTemperature {
+    display : flex;
+    justify-content : space-between;
+    margin : 5px;
+    margin-top : 15px;
+    border-bottom : 1px solid;
+}
+
+#cardTempFeel {
+    display : flex;
+    justify-content : space-between;
+    margin : 5px;
+    border-bottom : 1px solid;
+}
+
+#cardClouds {
+    display : flex;
+    justify-content : space-between;
+    margin : 5px;
+    border-bottom : 1px solid;
+}
+
+#cardHumidity {
+    display : flex;
+    justify-content : space-between;
+    margin : 5px;
+}
