@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+    background-color: black;
+}
+
+* {
+    font-family: 'Comic Neue', cursive;
+}
+
+
+#tableCriptos, th, td {
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 10px;
+    border-spacing: 10px;
+}
+
+#tableCriptos {
+    background-color: #1572A1;
+    margin: 2% 8% 2% 8%;
+    width: 84%;
+}
+
+#tableCriptos th {
+    background-color: #D9D7F1;
+    color: #2B2B2B;
+}
+
+#tableCriptos td {
+    background-color: #D3DEDC;
+}
